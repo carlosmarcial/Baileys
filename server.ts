@@ -4,12 +4,32 @@ import NodeCache from '@cacheable/node-cache'
 import makeWASocket, { DisconnectReason, fetchLatestBaileysVersion, makeCacheableSignalKeyStore, useMultiFileAuthState } from './src/index.js'
 import type { WASocket } from './src/index.js'
 import P from 'pino'
+import crypto from 'crypto'
+import axios from 'axios'
 
 const app = express()
 app.use(express.json())
 
 const logger = P({ timestamp: () => `,"time":"${new Date().toJSON()}"` })
 logger.level = 'info'
+
+// Webhook configuration
+const WEBHOOK_CONFIG = {
+    url: process.env.WEBHOOK_URL || 'https://a21e23209781.ngrok-free.app/api/whatsapp/webhook',
+    secret: process.env.WEBHOOK_SECRET || 'e6cff8cd6752c81bb58718052175c4bfda4a3f7ea5ed13bd208d7473bc6157ab',
+    events: ['message', 'status', 'qr', 'connected', 'disconnected']
+}
+
+// Session management
+interface Session {
+    id: string
+    sock: WASocket | null
+    qrCode: string | null
+    status: string
+    createdAt: Date
+}
+
+const sessions = new Map<string, Session>()
 
 // Create a cache that implements the CacheStore interface
 const msgRetryCounterCache = {
@@ -28,18 +48,49 @@ const msgRetryCounterCache = {
         this.cache = new NodeCache()
     }
 }
+// Default session for backward compatibility
 let sock: WASocket | null = null
 let qrCode: string | null = null
 let connectionStatus = 'disconnected'
 
+// Webhook sending function
+async function sendWebhook(event: string, data: any, sessionId: string = 'default') {
+    try {
+        const payload = {
+            sessionId,
+            event,
+            data,
+            timestamp: new Date().toISOString()
+        }
+        
+        const signature = crypto
+            .createHmac('sha256', WEBHOOK_CONFIG.secret)
+            .update(JSON.stringify(payload))
+            .digest('hex')
+        
+        await axios.post(WEBHOOK_CONFIG.url, payload, {
+            headers: {
+                'Content-Type': 'application/json',
+                'x-webhook-signature': signature
+            },
+            timeout: 5000
+        })
+        
+        logger.info({ event, sessionId }, 'Webhook sent successfully')
+    } catch (error) {
+        logger.error({ error, event, sessionId }, 'Failed to send webhook')
+    }
+}
+
 // Initialize WhatsApp connection
-async function initializeWhatsApp() {
-    const { state, saveCreds } = await useMultiFileAuthState('baileys_auth_info')
+async function initializeWhatsApp(sessionId: string = 'default') {
+    const authFolder = sessionId === 'default' ? 'baileys_auth_info' : `baileys_auth_${sessionId}`
+    const { state, saveCreds } = await useMultiFileAuthState(authFolder)
     const { version, isLatest } = await fetchLatestBaileysVersion()
     
     console.log(`using WA v${version.join('.')}, isLatest: ${isLatest}`)
 
-    sock = makeWASocket({
+    const socket = makeWASocket({
         version,
         logger,
         auth: {
@@ -51,46 +102,256 @@ async function initializeWhatsApp() {
         printQRInTerminal: false,
     })
 
+    // Create or update session
+    const session: Session = {
+        id: sessionId,
+        sock: socket,
+        qrCode: null,
+        status: 'connecting',
+        createdAt: new Date()
+    }
+    sessions.set(sessionId, session)
+    
+    // Update default socket for backward compatibility
+    if (sessionId === 'default') {
+        sock = socket
+    }
+    
     // Handle connection updates
-    sock.ev.on('connection.update', (update) => {
+    socket.ev.on('connection.update', async (update) => {
         const { connection, lastDisconnect, qr } = update
         
         if (qr) {
-            qrCode = qr
-            console.log('QR Code updated')
+            session.qrCode = qr
+            if (sessionId === 'default') {
+                qrCode = qr
+            }
+            console.log('QR Code updated for session:', sessionId)
+            await sendWebhook('qr', { qr }, sessionId)
         }
         
         if (connection === 'close') {
-            connectionStatus = 'disconnected'
+            session.status = 'disconnected'
+            if (sessionId === 'default') {
+                connectionStatus = 'disconnected'
+            }
             const shouldReconnect = (lastDisconnect?.error as Boom)?.output?.statusCode !== DisconnectReason.loggedOut
             console.log('connection closed due to ', lastDisconnect?.error, ', reconnecting ', shouldReconnect)
             
+            await sendWebhook('disconnected', { reason: lastDisconnect?.error }, sessionId)
+            
             if (shouldReconnect) {
-                initializeWhatsApp()
+                setTimeout(() => initializeWhatsApp(sessionId), 3000)
+            } else {
+                sessions.delete(sessionId)
             }
         } else if (connection === 'open') {
-            connectionStatus = 'connected'
-            qrCode = null
-            console.log('WhatsApp connection opened')
+            session.status = 'connected'
+            session.qrCode = null
+            if (sessionId === 'default') {
+                connectionStatus = 'connected'
+                qrCode = null
+            }
+            console.log('WhatsApp connection opened for session:', sessionId)
+            await sendWebhook('connected', { sessionId }, sessionId)
         } else if (connection === 'connecting') {
-            connectionStatus = 'connecting'
+            session.status = 'connecting'
+            if (sessionId === 'default') {
+                connectionStatus = 'connecting'
+            }
         }
     })
 
     // Save credentials when updated
-    sock.ev.on('creds.update', saveCreds)
+    socket.ev.on('creds.update', saveCreds)
 
     // Handle incoming messages
-    sock.ev.on('messages.upsert', async (event) => {
+    socket.ev.on('messages.upsert', async (event) => {
         for (const m of event.messages) {
             if (!m.key.fromMe && m.message) {
                 console.log('Received message:', JSON.stringify(m.message, null, 2))
+                await sendWebhook('message', {
+                    key: m.key,
+                    message: m.message,
+                    messageTimestamp: m.messageTimestamp,
+                    pushName: m.pushName
+                }, sessionId)
             }
         }
     })
+    
+    // Handle message status updates
+    socket.ev.on('messages.update', async (updates) => {
+        for (const update of updates) {
+            await sendWebhook('status', update, sessionId)
+        }
+    })
+    
+    return socket
 }
 
 // API Routes
+
+// Session Management Routes
+
+// Create a new session
+app.post('/api/sessions/create', async (req, res) => {
+    try {
+        const { sessionId = `session_${Date.now()}` } = req.body
+        
+        if (sessions.has(sessionId)) {
+            return res.status(409).json({ error: 'Session already exists' })
+        }
+        
+        await initializeWhatsApp(sessionId)
+        
+        res.json({
+            sessionId,
+            status: 'initializing',
+            createdAt: new Date().toISOString()
+        })
+    } catch (error) {
+        console.error('Error creating session:', error)
+        res.status(500).json({ error: 'Failed to create session' })
+    }
+})
+
+// Get session QR code
+app.get('/api/sessions/:sessionId/qr', (req, res) => {
+    const { sessionId } = req.params
+    const session = sessions.get(sessionId)
+    
+    if (!session) {
+        return res.status(404).json({ error: 'Session not found' })
+    }
+    
+    if (!session.qrCode) {
+        return res.status(404).json({ error: 'No QR code available' })
+    }
+    
+    res.json({ qr: session.qrCode })
+})
+
+// Get session status
+app.get('/api/sessions/:sessionId/status', (req, res) => {
+    const { sessionId } = req.params
+    const session = sessions.get(sessionId)
+    
+    if (!session) {
+        return res.status(404).json({ error: 'Session not found' })
+    }
+    
+    res.json({
+        sessionId,
+        connected: session.status === 'connected',
+        status: session.status,
+        hasQR: session.qrCode !== null,
+        createdAt: session.createdAt
+    })
+})
+
+// Delete session
+app.delete('/api/sessions/:sessionId', async (req, res) => {
+    try {
+        const { sessionId } = req.params
+        const session = sessions.get(sessionId)
+        
+        if (!session) {
+            return res.status(404).json({ error: 'Session not found' })
+        }
+        
+        if (session.sock) {
+            await session.sock.logout()
+        }
+        
+        sessions.delete(sessionId)
+        
+        res.json({ success: true })
+    } catch (error) {
+        console.error('Error deleting session:', error)
+        res.status(500).json({ error: 'Failed to delete session' })
+    }
+})
+
+// Send message (supports session-based sending)
+app.post('/api/messages/send', async (req, res) => {
+    try {
+        const { sessionId = 'default', to, message, type = 'text' } = req.body
+        
+        if (!to || !message) {
+            return res.status(400).json({ error: 'to and message required' })
+        }
+        
+        const session = sessions.get(sessionId) || (sessionId === 'default' ? { sock, status: connectionStatus } : null)
+        
+        if (!session || !session.sock || session.status !== 'connected') {
+            return res.status(503).json({ error: 'Session not connected' })
+        }
+        
+        let messageContent: any
+        if (type === 'text') {
+            messageContent = { text: message }
+        } else {
+            return res.status(400).json({ error: 'Unsupported message type' })
+        }
+        
+        const result = await session.sock.sendMessage(to, messageContent)
+        res.json({ 
+            success: true, 
+            messageId: result?.key.id,
+            sessionId 
+        })
+    } catch (error) {
+        console.error('Error sending message:', error)
+        res.status(500).json({ error: 'Failed to send message' })
+    }
+})
+
+// Register webhook (for updating webhook URL dynamically)
+app.post('/api/webhook/register', (req, res) => {
+    try {
+        const { url, secret } = req.body
+        
+        if (!url) {
+            return res.status(400).json({ error: 'Webhook URL required' })
+        }
+        
+        WEBHOOK_CONFIG.url = url
+        if (secret) {
+            WEBHOOK_CONFIG.secret = secret
+        }
+        
+        res.json({ 
+            success: true,
+            webhook: {
+                url: WEBHOOK_CONFIG.url,
+                events: WEBHOOK_CONFIG.events
+            }
+        })
+    } catch (error) {
+        console.error('Error registering webhook:', error)
+        res.status(500).json({ error: 'Failed to register webhook' })
+    }
+})
+
+// Media upload endpoint
+app.post('/api/media/upload', express.raw({ type: ['image/*', 'video/*', 'audio/*'], limit: '50mb' }), async (req, res) => {
+    try {
+        // In a real implementation, you would:
+        // 1. Save the uploaded file
+        // 2. Return a URL or ID that can be used to send the media
+        // For now, we'll return a placeholder response
+        
+        res.json({
+            success: true,
+            mediaId: `media_${Date.now()}`,
+            message: 'Media upload endpoint - implementation pending'
+        })
+    } catch (error) {
+        console.error('Error uploading media:', error)
+        res.status(500).json({ error: 'Failed to upload media' })
+    }
+})
 
 // Health check endpoint
 app.get('/health', (req, res) => {
@@ -143,7 +404,7 @@ app.post('/pairing-code', async (req, res) => {
     }
 })
 
-// Send message
+// Legacy send message endpoint (backward compatibility)
 app.post('/send-message', async (req, res) => {
     try {
         const { jid, message } = req.body

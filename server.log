@@ -1,0 +1,373 @@
+Server running on port 3000
+using WA v2.3000.1023223821, isLatest: true
+{"level":30,"time":"2025-08-01T20:30:28.194Z","pid":36423,"hostname":"Mac.lan","browser":["Ubuntu","Chrome","22.04.4"],"helloMsg":{"clientHello":{"ephemeral":"Nk//7Vj/YvzEV9pa76V+ewPQZY3vf6u+BGo3GlQTzFM="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-08-01T20:30:28.338Z","pid":36423,"hostname":"Mac.lan","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAAjA==","eKeytype":"BQ==","eIdent":"nfzLI9Tbbx4XszVWzRkB8rSJjX/3i6mbioKMJVDU908=","eSkeyId":"AAAB","eSkeyVal":"5ujxE/isiAU86cad565st/bH4/mVe2DBLiaKoglQ0Qc=","eSkeySig":"/sv2QgvKIC4Knx4jTzSRfGWS+4Ow7lfQIHVgJ1BBY5LvZTK/SjZk+wPMm4m2hMvZf2KH4bPH1Hjeui2ESMHSAQ==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgZVYnVudHUYASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+{"level":30,"time":"2025-08-01T20:33:08.631Z","pid":36423,"hostname":"Mac.lan","trace":"Error: QR refs attempts ended\n    at Timeout.genPairQR (/Users/carlosmarcial/Desktop/Baileys/src/Socket/socket.ts:594:9)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","msg":"connection errored"}
+connection closed due to  Error: QR refs attempts ended
+    at Timeout.genPairQR (/Users/carlosmarcial/Desktop/Baileys/src/Socket/socket.ts:594:9)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7) {
+  data: null,
+  isBoom: true,
+  isServer: false,
+  output: {
+    statusCode: 408,
+    payload: {
+      statusCode: 408,
+      error: 'Request Time-out',
+      message: 'QR refs attempts ended'
+    },
+    headers: {}
+  }
+} , reconnecting  true
+using WA v2.3000.1023223821, isLatest: true
+{"level":30,"time":"2025-08-01T20:33:08.908Z","pid":36423,"hostname":"Mac.lan","browser":["Ubuntu","Chrome","22.04.4"],"helloMsg":{"clientHello":{"ephemeral":"DDOEaoLdy6LG+qxB5au+17LpZfZQVggtI72G8yWKllw="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-08-01T20:33:08.960Z","pid":36423,"hostname":"Mac.lan","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAA0w==","eKeytype":"BQ==","eIdent":"9oNZm5A6KWDA0Fxlk8JelT5zJyb7zwzXZYtokAdvvhQ=","eSkeyId":"AAAB","eSkeyVal":"1Q1cJc0RR5Usx3bI4oLkg/i5pTtT+Qqmve4khllnzRQ=","eSkeySig":"+7clxeu4wXphPxoOLUXMpjb1D1Wk9Hi+ukeYorGq2pQl+ludVGOLb3g1ByOQl7k7jKfl4no79yeGKW363q3qDw==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgZVYnVudHUYASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+{"level":30,"time":"2025-08-01T20:35:49.158Z","pid":36423,"hostname":"Mac.lan","trace":"Error: QR refs attempts ended\n    at Timeout.genPairQR (/Users/carlosmarcial/Desktop/Baileys/src/Socket/socket.ts:594:9)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","msg":"connection errored"}
+connection closed due to  Error: QR refs attempts ended
+    at Timeout.genPairQR (/Users/carlosmarcial/Desktop/Baileys/src/Socket/socket.ts:594:9)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7) {
+  data: null,
+  isBoom: true,
+  isServer: false,
+  output: {
+    statusCode: 408,
+    payload: {
+      statusCode: 408,
+      error: 'Request Time-out',
+      message: 'QR refs attempts ended'
+    },
+    headers: {}
+  }
+} , reconnecting  true
+using WA v2.3000.1023223821, isLatest: true
+{"level":30,"time":"2025-08-01T20:35:49.369Z","pid":36423,"hostname":"Mac.lan","browser":["Ubuntu","Chrome","22.04.4"],"helloMsg":{"clientHello":{"ephemeral":"VMtmJxTqCfz8nLBLwvDurvCzp9ZGfm0+bgu+IyipPns="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-08-01T20:35:49.497Z","pid":36423,"hostname":"Mac.lan","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAA9g==","eKeytype":"BQ==","eIdent":"+4Wr4KdOiiFBxXP72PxJMDRhRExMoSoWxn3ycTZ84wc=","eSkeyId":"AAAB","eSkeyVal":"kMTOcpctNZLWGuRAnesZFJZhy/fgBa+PfoksFt1kG0g=","eSkeySig":"5IO+lXWk6kG/q2BPSQ3q/TY1OjeA8+jeBSIQfzw1wtR+hoDz1ebk6SVy+Wyb3OyOM2/5kZxQDVa8mx2PTK2/CA==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgZVYnVudHUYASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+{"level":30,"time":"2025-08-01T20:38:29.736Z","pid":36423,"hostname":"Mac.lan","trace":"Error: QR refs attempts ended\n    at Timeout.genPairQR (/Users/carlosmarcial/Desktop/Baileys/src/Socket/socket.ts:594:9)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","msg":"connection errored"}
+connection closed due to  Error: QR refs attempts ended
+    at Timeout.genPairQR (/Users/carlosmarcial/Desktop/Baileys/src/Socket/socket.ts:594:9)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7) {
+  data: null,
+  isBoom: true,
+  isServer: false,
+  output: {
+    statusCode: 408,
+    payload: {
+      statusCode: 408,
+      error: 'Request Time-out',
+      message: 'QR refs attempts ended'
+    },
+    headers: {}
+  }
+} , reconnecting  true
+using WA v2.3000.1023223821, isLatest: true
+{"level":30,"time":"2025-08-01T20:38:29.893Z","pid":36423,"hostname":"Mac.lan","browser":["Ubuntu","Chrome","22.04.4"],"helloMsg":{"clientHello":{"ephemeral":"t5t5hVr2OSLZGFnXPuVXHqfq2+q28aaSh/qeuM2LHwo="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-08-01T20:38:29.990Z","pid":36423,"hostname":"Mac.lan","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAAmg==","eKeytype":"BQ==","eIdent":"L5c27sKQVh0r1+3Somlj1DUq15vH8RLF0OIoo6YGsAY=","eSkeyId":"AAAB","eSkeyVal":"cUq2G4tQG7WkcofNl+B5HKCuC4G79HRkO8u42R0uFF8=","eSkeySig":"6TWtXDZDPaODiLP1T3717RkbI/svbJkOIbvPTWnGKoHsR9F/HbTArpRadbX7QmgvpKAeG4QYnDJJoUEiqI31hw==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgZVYnVudHUYASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+{"level":30,"time":"2025-08-01T20:41:10.189Z","pid":36423,"hostname":"Mac.lan","trace":"Error: QR refs attempts ended\n    at Timeout.genPairQR (/Users/carlosmarcial/Desktop/Baileys/src/Socket/socket.ts:594:9)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","msg":"connection errored"}
+connection closed due to  Error: QR refs attempts ended
+    at Timeout.genPairQR (/Users/carlosmarcial/Desktop/Baileys/src/Socket/socket.ts:594:9)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7) {
+  data: null,
+  isBoom: true,
+  isServer: false,
+  output: {
+    statusCode: 408,
+    payload: {
+      statusCode: 408,
+      error: 'Request Time-out',
+      message: 'QR refs attempts ended'
+    },
+    headers: {}
+  }
+} , reconnecting  true
+using WA v2.3000.1023223821, isLatest: true
+{"level":30,"time":"2025-08-01T20:41:10.402Z","pid":36423,"hostname":"Mac.lan","browser":["Ubuntu","Chrome","22.04.4"],"helloMsg":{"clientHello":{"ephemeral":"gV4EgY7KBIlSgmrOAIsWL7j7PKzuOQTreUNmpBqtCW4="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-08-01T20:41:10.533Z","pid":36423,"hostname":"Mac.lan","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAA3Q==","eKeytype":"BQ==","eIdent":"Stvw219WgSb1MELlE1Fe9xa/2hW1Z+vF9hKh/obVnlc=","eSkeyId":"AAAB","eSkeyVal":"ki+wre+XqO0EWaoyZcSEylb/3tlPd6vxvkt77PzeuRQ=","eSkeySig":"mpa5djwxY4c/+QOds+9XjANYrBOv0jzeXFk2WtYNi5iGp4mlQjWNQn01IiVCXvGzWIqN9ocs81t4rVdOMl2DgA==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgZVYnVudHUYASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+{"level":30,"time":"2025-08-01T20:43:50.817Z","pid":36423,"hostname":"Mac.lan","trace":"Error: QR refs attempts ended\n    at Timeout.genPairQR (/Users/carlosmarcial/Desktop/Baileys/src/Socket/socket.ts:594:9)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","msg":"connection errored"}
+connection closed due to  Error: QR refs attempts ended
+    at Timeout.genPairQR (/Users/carlosmarcial/Desktop/Baileys/src/Socket/socket.ts:594:9)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7) {
+  data: null,
+  isBoom: true,
+  isServer: false,
+  output: {
+    statusCode: 408,
+    payload: {
+      statusCode: 408,
+      error: 'Request Time-out',
+      message: 'QR refs attempts ended'
+    },
+    headers: {}
+  }
+} , reconnecting  true
+using WA v2.3000.1023223821, isLatest: true
+{"level":30,"time":"2025-08-01T20:43:51.066Z","pid":36423,"hostname":"Mac.lan","browser":["Ubuntu","Chrome","22.04.4"],"helloMsg":{"clientHello":{"ephemeral":"zQpGneUPz47b0kE/zNX8+ARypMa2Y6bFLZvs+zuLviI="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-08-01T20:43:51.234Z","pid":36423,"hostname":"Mac.lan","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAAnA==","eKeytype":"BQ==","eIdent":"rLyAASbXB/A4COdcX5RtT1adUZKg87hk0T5zfZdH8Fw=","eSkeyId":"AAAB","eSkeyVal":"lC0lFe4jv/bgqHxFMXZi+bVROTerUtjJB/oXMgV63gE=","eSkeySig":"bCGZiCC358/+/7TJI48j8dX+QFSBcikXMoywsyyMIPErAL60kEg666mFGvKuP/wa/J+0Kq8EcQSQe3AeI+4MBg==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgZVYnVudHUYASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+{"level":30,"time":"2025-08-01T20:46:31.569Z","pid":36423,"hostname":"Mac.lan","trace":"Error: QR refs attempts ended\n    at Timeout.genPairQR (/Users/carlosmarcial/Desktop/Baileys/src/Socket/socket.ts:594:9)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","msg":"connection errored"}
+connection closed due to  Error: QR refs attempts ended
+    at Timeout.genPairQR (/Users/carlosmarcial/Desktop/Baileys/src/Socket/socket.ts:594:9)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7) {
+  data: null,
+  isBoom: true,
+  isServer: false,
+  output: {
+    statusCode: 408,
+    payload: {
+      statusCode: 408,
+      error: 'Request Time-out',
+      message: 'QR refs attempts ended'
+    },
+    headers: {}
+  }
+} , reconnecting  true
+using WA v2.3000.1023223821, isLatest: true
+{"level":30,"time":"2025-08-01T20:46:31.740Z","pid":36423,"hostname":"Mac.lan","browser":["Ubuntu","Chrome","22.04.4"],"helloMsg":{"clientHello":{"ephemeral":"Xm4EFKtJH/FFZov3vep0aeUboybuI77AOxuFt4Os4Ho="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-08-01T20:46:31.842Z","pid":36423,"hostname":"Mac.lan","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAAxA==","eKeytype":"BQ==","eIdent":"1xWik151qrYJTrbaklJg0WmigyAjmBOjTk4eEvRnF2Y=","eSkeyId":"AAAB","eSkeyVal":"amlEcPuMaCc4eNTLe16Wk9Y8FBSyCZ+Q2MMUOrIgPH8=","eSkeySig":"ovUYS3q3HCQkbXFyoQhVIOEabX4W3ldmLkE0C3Sw+4tSb2/fLX8PB/Nuk7uqPVMSpOueEqYB6bTllj5i9ig8DA==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgZVYnVudHUYASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+QR Code updated
+QR Code updated
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+{"level":30,"time":"2025-08-01T20:51:52.451Z","pid":36423,"hostname":"Mac.lan","trace":"Error: QR refs attempts ended\n    at Timeout.genPairQR (/Users/carlosmarcial/Desktop/Baileys/src/Socket/socket.ts:594:9)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","msg":"connection errored"}
+connection closed due to  Error: QR refs attempts ended
+    at Timeout.genPairQR (/Users/carlosmarcial/Desktop/Baileys/src/Socket/socket.ts:594:9)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7) {
+  data: null,
+  isBoom: true,
+  isServer: false,
+  output: {
+    statusCode: 408,
+    payload: {
+      statusCode: 408,
+      error: 'Request Time-out',
+      message: 'QR refs attempts ended'
+    },
+    headers: {}
+  }
+} , reconnecting  true
+using WA v2.3000.1023223821, isLatest: true
+{"level":30,"time":"2025-08-01T20:51:52.714Z","pid":36423,"hostname":"Mac.lan","browser":["Ubuntu","Chrome","22.04.4"],"helloMsg":{"clientHello":{"ephemeral":"gAof2ydmtPJBWP4h/zBeLZ2aEmdfllg/QOM3eypAxR0="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-08-01T20:51:52.821Z","pid":36423,"hostname":"Mac.lan","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAAFQ==","eKeytype":"BQ==","eIdent":"XDIFMWyrdbcmQqB03ej11G2jiyUBzO4BXZwEry3xRxU=","eSkeyId":"AAAB","eSkeyVal":"C26n+o8B9Z9JsQo+WQzbdq9Ex0v+JdiBBPaVPqj8z2c=","eSkeySig":"dw2ZLpqOpxD+QOpJlJKQ+UNJboMPnM6yZ3TQoen8KPa+JlpI1qvTai8vfBJzP+dj8j/My4oFLcnBwZetF8duBA==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgZVYnVudHUYASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+{"level":30,"time":"2025-08-01T20:54:33.038Z","pid":36423,"hostname":"Mac.lan","trace":"Error: QR refs attempts ended\n    at Timeout.genPairQR (/Users/carlosmarcial/Desktop/Baileys/src/Socket/socket.ts:594:9)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","msg":"connection errored"}
+connection closed due to  Error: QR refs attempts ended
+    at Timeout.genPairQR (/Users/carlosmarcial/Desktop/Baileys/src/Socket/socket.ts:594:9)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7) {
+  data: null,
+  isBoom: true,
+  isServer: false,
+  output: {
+    statusCode: 408,
+    payload: {
+      statusCode: 408,
+      error: 'Request Time-out',
+      message: 'QR refs attempts ended'
+    },
+    headers: {}
+  }
+} , reconnecting  true
+using WA v2.3000.1023223821, isLatest: true
+{"level":30,"time":"2025-08-01T20:54:33.215Z","pid":36423,"hostname":"Mac.lan","browser":["Ubuntu","Chrome","22.04.4"],"helloMsg":{"clientHello":{"ephemeral":"CzGSwgITzhldzzD5mftwN10ON2dFqrDyq1MU8vf61FI="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-08-01T20:54:33.307Z","pid":36423,"hostname":"Mac.lan","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAAxg==","eKeytype":"BQ==","eIdent":"6YyFkcDxKJ0ouKkPAbP1IX7xV+R83fRPG9I0cWgbeh4=","eSkeyId":"AAAB","eSkeyVal":"a/8yDTaWd8/Phof4bFqQF7srfyzidXCo/j+y5N9LMDI=","eSkeySig":"Mm/v6y6IFIFKuzhYYuTqtQZuQUPy/RCJx/dfm2ZSK/RJJVQV9SCRNGB7QTtaZ5FXoOAI5sbwZfz6dMkvNZK+jA==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgZVYnVudHUYASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+{"level":30,"time":"2025-08-01T20:57:13.521Z","pid":36423,"hostname":"Mac.lan","trace":"Error: QR refs attempts ended\n    at Timeout.genPairQR (/Users/carlosmarcial/Desktop/Baileys/src/Socket/socket.ts:594:9)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","msg":"connection errored"}
+connection closed due to  Error: QR refs attempts ended
+    at Timeout.genPairQR (/Users/carlosmarcial/Desktop/Baileys/src/Socket/socket.ts:594:9)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7) {
+  data: null,
+  isBoom: true,
+  isServer: false,
+  output: {
+    statusCode: 408,
+    payload: {
+      statusCode: 408,
+      error: 'Request Time-out',
+      message: 'QR refs attempts ended'
+    },
+    headers: {}
+  }
+} , reconnecting  true
+using WA v2.3000.1023223821, isLatest: true
+{"level":30,"time":"2025-08-01T20:57:13.661Z","pid":36423,"hostname":"Mac.lan","browser":["Ubuntu","Chrome","22.04.4"],"helloMsg":{"clientHello":{"ephemeral":"XS02xkccanIs/KKcuYvNK4Obota8QYAJt2rqOLr/wAY="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-08-01T20:57:13.713Z","pid":36423,"hostname":"Mac.lan","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAAaA==","eKeytype":"BQ==","eIdent":"2wJLAxvdEreYLVlmAkatnL5Ini1zn23yjzuzSHvK3FU=","eSkeyId":"AAAB","eSkeyVal":"HluGesXUzLAP5/MIZIgVuAGfGOwLJv6vH3LBux2EQHk=","eSkeySig":"m3J6486LITziKq+gBiNzarvk9nCiHdkd71jZlNFkaxS7t6NO6O8ruXnv8IiRzIZZKoyuzwcKSbIZ2HeodRi+jQ==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgZVYnVudHUYASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+{"level":30,"time":"2025-08-01T20:59:53.900Z","pid":36423,"hostname":"Mac.lan","trace":"Error: QR refs attempts ended\n    at Timeout.genPairQR (/Users/carlosmarcial/Desktop/Baileys/src/Socket/socket.ts:594:9)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","msg":"connection errored"}
+connection closed due to  Error: QR refs attempts ended
+    at Timeout.genPairQR (/Users/carlosmarcial/Desktop/Baileys/src/Socket/socket.ts:594:9)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7) {
+  data: null,
+  isBoom: true,
+  isServer: false,
+  output: {
+    statusCode: 408,
+    payload: {
+      statusCode: 408,
+      error: 'Request Time-out',
+      message: 'QR refs attempts ended'
+    },
+    headers: {}
+  }
+} , reconnecting  true
+using WA v2.3000.1023223821, isLatest: true
+{"level":30,"time":"2025-08-01T20:59:54.210Z","pid":36423,"hostname":"Mac.lan","browser":["Ubuntu","Chrome","22.04.4"],"helloMsg":{"clientHello":{"ephemeral":"K5oU+flBHCZNpmj6xo9eCN9BCP3QPpdqJR6RBNREIFQ="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-08-01T20:59:54.286Z","pid":36423,"hostname":"Mac.lan","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAArQ==","eKeytype":"BQ==","eIdent":"NXMriVDKs1347+cdOOQD8+KDR9Jb2k6sVBy0PoBIjzE=","eSkeyId":"AAAB","eSkeyVal":"okW7dkwti0jBwJNplnuGQpbm1bFjH45z6anOp2ob9Ew=","eSkeySig":"CJLzCIh8Y8vC1KdqnbiqtB+Au3HvKHpbkDpDa/PcPJTwItgkO4fJCOPPRs1grovjATW0gIV3M2oT6XPpBYSojg==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgZVYnVudHUYASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+{"level":30,"time":"2025-08-01T21:02:34.576Z","pid":36423,"hostname":"Mac.lan","trace":"Error: QR refs attempts ended\n    at Timeout.genPairQR (/Users/carlosmarcial/Desktop/Baileys/src/Socket/socket.ts:594:9)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","msg":"connection errored"}
+connection closed due to  Error: QR refs attempts ended
+    at Timeout.genPairQR (/Users/carlosmarcial/Desktop/Baileys/src/Socket/socket.ts:594:9)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7) {
+  data: null,
+  isBoom: true,
+  isServer: false,
+  output: {
+    statusCode: 408,
+    payload: {
+      statusCode: 408,
+      error: 'Request Time-out',
+      message: 'QR refs attempts ended'
+    },
+    headers: {}
+  }
+} , reconnecting  true
+using WA v2.3000.1023223821, isLatest: true
+{"level":30,"time":"2025-08-01T21:02:35.107Z","pid":36423,"hostname":"Mac.lan","browser":["Ubuntu","Chrome","22.04.4"],"helloMsg":{"clientHello":{"ephemeral":"hfF1nBcp9JQOZCz2ujyhCBAhPx6yxdLBJ4wWoA5l0Uw="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-08-01T21:02:35.282Z","pid":36423,"hostname":"Mac.lan","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAAWQ==","eKeytype":"BQ==","eIdent":"IRU2NrEB8Vo+LJO+5Mi55gudywVZ5JqQ9A5oddRph1o=","eSkeyId":"AAAB","eSkeyVal":"2qgqDEkdO24ohwFj5jbhF4k0yIurxFwAwgJA2KrHQVU=","eSkeySig":"NGKfkjb9Yz2W9D2z8UcXEsUGvY1sE8YxzAxOqTvNRvdbtKeo1b5/nO7u0fCqOxu3zWm+dh7SKw3WB/MTszHDBw==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgZVYnVudHUYASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+{"level":30,"time":"2025-08-01T21:05:15.608Z","pid":36423,"hostname":"Mac.lan","trace":"Error: QR refs attempts ended\n    at Timeout.genPairQR (/Users/carlosmarcial/Desktop/Baileys/src/Socket/socket.ts:594:9)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","msg":"connection errored"}
+connection closed due to  Error: QR refs attempts ended
+    at Timeout.genPairQR (/Users/carlosmarcial/Desktop/Baileys/src/Socket/socket.ts:594:9)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7) {
+  data: null,
+  isBoom: true,
+  isServer: false,
+  output: {
+    statusCode: 408,
+    payload: {
+      statusCode: 408,
+      error: 'Request Time-out',
+      message: 'QR refs attempts ended'
+    },
+    headers: {}
+  }
+} , reconnecting  true
+using WA v2.3000.1023223821, isLatest: true
+{"level":30,"time":"2025-08-01T21:05:15.926Z","pid":36423,"hostname":"Mac.lan","browser":["Ubuntu","Chrome","22.04.4"],"helloMsg":{"clientHello":{"ephemeral":"JbI5ygr/s6Vf9y/V7UDVn5AeSzQfHA9TJL8tnb5yiHg="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-08-01T21:05:16.023Z","pid":36423,"hostname":"Mac.lan","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAA0g==","eKeytype":"BQ==","eIdent":"3CI7msJ65TeBpx5FJ31AFF5ak7INlZlAhgRvHpdUun4=","eSkeyId":"AAAB","eSkeyVal":"gOOuHA+iB8qBySsYHm++5ghNHXuN35RSqw7r+cTad1k=","eSkeySig":"O2jIW6g6JuF1nvU/YNg/py0lSbamtYRwHJr1OMGRHmQKoeWL5e28iVTJswQ8NvhlVbJI2whDtkWg1Ctc3ebXAg==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgZVYnVudHUYASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+QR Code updated
+{"level":30,"time":"2025-08-01T21:07:56.327Z","pid":36423,"hostname":"Mac.lan","trace":"Error: QR refs attempts ended\n    at Timeout.genPairQR (/Users/carlosmarcial/Desktop/Baileys/src/Socket/socket.ts:594:9)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","msg":"connection errored"}
+connection closed due to  Error: QR refs attempts ended
+    at Timeout.genPairQR (/Users/carlosmarcial/Desktop/Baileys/src/Socket/socket.ts:594:9)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7) {
+  data: null,
+  isBoom: true,
+  isServer: false,
+  output: {
+    statusCode: 408,
+    payload: {
+      statusCode: 408,
+      error: 'Request Time-out',
+      message: 'QR refs attempts ended'
+    },
+    headers: {}
+  }
+} , reconnecting  true
+using WA v2.3000.1023223821, isLatest: true
+{"level":30,"time":"2025-08-01T21:07:56.775Z","pid":36423,"hostname":"Mac.lan","browser":["Ubuntu","Chrome","22.04.4"],"helloMsg":{"clientHello":{"ephemeral":"4Id38i4MwFS/V7MSoVI5ZEVaRkAfBqqXVPI627PIMk4="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-08-01T21:07:57.655Z","pid":36423,"hostname":"Mac.lan","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAAxQ==","eKeytype":"BQ==","eIdent":"e9q5E0WIceOy8O/eg+w/LrZJT1X9DxAtZfqlfU1VA2s=","eSkeyId":"AAAB","eSkeyVal":"7SsLOoXlk9ZlCtIcYeQ7+9Qjg4bCDHNVi77DQv1IJAo=","eSkeySig":"dEU8JqcrDEy/J4spnfquTzHlgOS1B6tnl+6eODKyZ6sJR1LRZzA9Ye35dlYE3e9v3GdYtD3bUX6LyozxRqyAAw==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgZVYnVudHUYASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+node:internal/crypto/cipher:171
+  const ret = this[kHandle].final();
+                            ^
+
+Error: Unsupported state or unable to authenticate data
+    at Decipheriv.final (node:internal/crypto/cipher:171:29)
+    at aesDecryptGCM (/Users/carlosmarcial/Desktop/Baileys/src/Utils/crypto.ts:72:55)
+    at decrypt (/Users/carlosmarcial/Desktop/Baileys/src/Utils/noise-handler.ts:49:18)
+    at Object.decodeFrame (/Users/carlosmarcial/Desktop/Baileys/src/Utils/noise-handler.ts:181:21)
+    at WebSocketClient.onMessageReceived (/Users/carlosmarcial/Desktop/Baileys/src/Socket/socket.ts:298:9)
+    at WebSocketClient.emit (node:events:507:28)
+    at WebSocket.<anonymous> (/Users/carlosmarcial/Desktop/Baileys/src/Socket/Client/websocket.ts:39:52)
+    at WebSocket.emit (node:events:507:28)
+    at Receiver.receiverOnMessage (/Users/carlosmarcial/Desktop/Baileys/node_modules/ws/lib/websocket.js:1220:20)
+    at Receiver.emit (node:events:507:28)
+
+Node.js v24.0.2

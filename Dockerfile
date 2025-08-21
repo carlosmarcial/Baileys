@@ -12,8 +12,8 @@ RUN apt-get update -qq && \
 # Copy package files
 COPY .yarnrc.yml package.json yarn.lock ./
 
-# Install all dependencies (using Yarn v4 syntax)
-RUN yarn install --immutable
+# Install all dependencies (using Yarn v4 syntax, skip lifecycle scripts)
+RUN yarn install --immutable --mode=skip-build
 
 # Copy source code
 COPY . .
@@ -39,8 +39,7 @@ RUN corepack enable && yarn set version 4.9.2
 COPY --from=build /app/package.json /app/yarn.lock /app/.yarnrc.yml ./
 COPY --from=build /app/node_modules ./node_modules
 COPY --from=build /app/lib ./lib
-COPY --from=build /app/server.ts ./server.ts
-COPY --from=build /app/test-server.cjs ./test-server.cjs
+COPY --from=build /app/WAProto ./WAProto
 
 # Create auth directory
 RUN mkdir -p baileys_auth_info
@@ -53,4 +52,4 @@ ENV PORT=8080
 EXPOSE 8080
 
 # Start the application
-CMD ["node", "server.ts"]
+CMD ["node", "lib/server.js"]

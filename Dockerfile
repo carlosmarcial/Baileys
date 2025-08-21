@@ -9,8 +9,9 @@ FROM base AS build
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential git node-gyp pkg-config python-is-python3
 
-# Copy package files
+# Copy package files and yarn cache
 COPY .yarnrc.yml package.json yarn.lock ./
+COPY .yarn ./.yarn
 
 # Install all dependencies (using Yarn v4 syntax)
 RUN yarn install --immutable
@@ -21,14 +22,24 @@ COPY . .
 # Build the application
 RUN yarn build
 
-# Final stage
-FROM base AS final
+# Final stage - using full node image for production to avoid missing dependencies
+FROM node:20.18.0-slim AS final
 
-# Install production dependencies only
-COPY .yarnrc.yml package.json yarn.lock ./
-RUN yarn workspaces focus --production
+# Install runtime dependencies that might be needed
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
 
-# Copy built application
+WORKDIR /app
+
+# Enable yarn
+RUN corepack enable && yarn set version 4.9.2
+
+# Copy package files and built application from build stage
+COPY --from=build /app/package.json /app/yarn.lock /app/.yarnrc.yml ./
+COPY --from=build /app/.yarn ./.yarn
+COPY --from=build /app/node_modules ./node_modules
 COPY --from=build /app/lib ./lib
 COPY --from=build /app/server.ts ./server.ts
 COPY --from=build /app/test-server.cjs ./test-server.cjs

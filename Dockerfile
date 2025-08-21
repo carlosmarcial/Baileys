@@ -9,9 +9,8 @@ FROM base AS build
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential git node-gyp pkg-config python-is-python3
 
-# Copy package files and yarn cache
+# Copy package files
 COPY .yarnrc.yml package.json yarn.lock ./
-COPY .yarn ./.yarn
 
 # Install all dependencies (using Yarn v4 syntax)
 RUN yarn install --immutable
@@ -38,7 +37,6 @@ RUN corepack enable && yarn set version 4.9.2
 
 # Copy package files and built application from build stage
 COPY --from=build /app/package.json /app/yarn.lock /app/.yarnrc.yml ./
-COPY --from=build /app/.yarn ./.yarn
 COPY --from=build /app/node_modules ./node_modules
 COPY --from=build /app/lib ./lib
 COPY --from=build /app/server.ts ./server.ts
